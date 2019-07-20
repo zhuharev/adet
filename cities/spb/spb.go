@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/zhuharev/abet"
+	"github.com/zhuharev/adet"
 )
 
-func GetMetros() (res []abet.Metro) {
+func GetMetros() (res []adet.Metro) {
 	for _, m := range strings.Split(metros, "\n") {
-		res = append(res, abet.Metro{Name: m})
+		res = append(res, adet.Metro{Name: m})
 	}
 	return
 }
@@ -85,8 +85,8 @@ var metros = `беговая
 ленинский проспект
 проспект ветеранов`
 
-func GetStreets() (res []abet.Street, err error) {
-	err = json.Unmarshal(&res, []byte(StreetsJSON))
+func GetStreets() (res []adet.Street, err error) {
+	err = json.Unmarshal([]byte(StreetsJSON), &res)
 	return
 }
 
