@@ -54,9 +54,10 @@ func fixPunctuation(text string) string {
 	return result
 }
 
+//TODO
 func findStreetByName(allStreets []Street, name string) Street {
 	for _, s := range allStreets {
-		if strings.Contains(s.Name, name) {
+		if strings.Fields(s.Name)[0] == name {
 			return s
 		}
 	}
